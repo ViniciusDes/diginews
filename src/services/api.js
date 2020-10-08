@@ -1,5 +1,5 @@
 export function getExeRss() {
-  return fetch("http://api.exeoutsourcing.com.br/rss")
-    .then(response => response.text())
-    .then(JSON => new window.DOMParser().parseFromString(JSON, "text/xml"));
+  return fetch(process.env.REACT_APP_API_URL_)
+    .then((response) => response.text())
+    .then((JSON) => new window.DOMParser().parseFromString(JSON, "text/xml"));
 }
